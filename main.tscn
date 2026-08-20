@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://bdyigy4fvbvtr"]
+
+[ext_resource type="Script" uid="uid://b11qf2n3k2hk7" path="res://player.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://rjxgsk75oqdg" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://duo74of07nddp" path="res://assets/slime.darrius/sprite-1.png" id="1_ig7tw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xm2m"]
+atlas = ExtResource("1_ig7tw")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2yge"]
+atlas = ExtResource("1_ig7tw")
+region = Rect2(0, 400, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bvp3"]
+atlas = ExtResource("1_ig7tw")
+region = Rect2(400, 400, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lquwl"]
+atlas = ExtResource("1_ig7tw")
+region = Rect2(800, 400, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mycd"]
+atlas = ExtResource("1_ig7tw")
+region = Rect2(1200, 400, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
+atlas = ExtResource("1_ig7tw")
+region = Rect2(0, 800, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vw27"]
+atlas = ExtResource("1_ig7tw")
+region = Rect2(400, 800, 400, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_res0a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xm2m")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2yge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bvp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lquwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mycd")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_272bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vw27")
+}],
+"loop": 1,
+"name": &"slow",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_0xm2m"]
+script/source = "extends AnimatedSprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_res0a"]
+size = Vector2(230, 160)
+
+[node name="Main" type="Node2D" unique_id=408740726]
+script = ExtResource("1_h2yge")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=359544290]
+position = Vector2(-31, 5)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=400147026]
+polygon = PackedVector2Array(-197, 47, -7, 81, 192, 92, 472, 28, 840, 29, 1246, 13, 1427, 81, 1521, 147, 1688, 277, 1754, 332, 1821, 577, 1924, 624, 2156, 587, 2255, 457, 2210, 328, 2066, 272, 2092, 159, 2234, 114, 2411, 139, 2438, 205, 2442, 435, 2548, 572, 2803, 616, 3037, 704, 3198, 577, 3212, 400, 3193, 221, 3246, 93, 3501, 82, 3667, 131, 3729, 265, 3677, 555, 3740, 697, 4071, 655, 4233, 459, 4288, 158, 4344, -204, 4596, -822, 4944, -1157, 5103, -1285, 5272, -1116, 5058, -366, 5058, 390, 4157, 1156, 298, 1740, -914, 1008, -1156, 62, -1081, -1757, -193, -1750, 426, -1609, 150, -1225, -610, -714, -610, -176)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D" unique_id=1113883797]
+polygon = PackedVector2Array(-197, 47, -7, 81, 192, 92, 472, 28, 840, 29, 1246, 13, 1427, 81, 1521, 147, 1688, 277, 1754, 332, 1821, 577, 1924, 624, 2156, 587, 2255, 457, 2210, 328, 2066, 272, 2092, 159, 2234, 114, 2411, 139, 2438, 205, 2442, 435, 2548, 572, 2803, 616, 3037, 704, 3198, 577, 3212, 400, 3193, 221, 3246, 93, 3501, 82, 3667, 131, 3729, 265, 3677, 555, 3740, 697, 4071, 655, 4233, 459, 4288, 158, 4344, -204, 4596, -822, 4944, -1157, 5103, -1285, 5272, -1116, 5058, -366, 5058, 390, 4157, 1156, 298, 1740, -914, 1008, -1156, 62, -1081, -1757, -193, -1750, 426, -1609, 150, -1225, -610, -714, -610, -176)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1830207125]
+scale = Vector2(0.5, 0.5)
+floor_stop_on_slope = false
+script = ExtResource("1_0xm2m")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1695381300]
+sprite_frames = SubResource("SpriteFrames_res0a")
+animation = &"slow"
+frame_progress = 0.5861291
+script = SubResource("GDScript_0xm2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1559329557]
+position = Vector2(-3, 10)
+shape = SubResource("RectangleShape2D_res0a")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1574812273]
+position = Vector2(163, 161)
